@@ -33,8 +33,19 @@ Calculate hand value:
     # INPUT: An array of x cards (from 1 to x - 1 as long as sum before draw is less than 21 or 5 for some variant) 
     # OUTPUT: Calculate hand value given input
 """
+card_values = {
+    '2': 2, '3': 3, '4': 4, '5': 5,    '6': 6, '7': 7, '8': 8, '9': 9, 
+    '10': 10, 'J': 10, 'Q': 10, 'K': 10, 'A': 11
+}
+
 def calc_hand_val(hand):
-    pass
+    total = sum(card_values[card] for card in hand)
+    aces = hand.count('A')
+    while total > 21 and aces:
+        total -= 10
+        aces -= 1
+    return total
+
 
 """
 Simulate a game

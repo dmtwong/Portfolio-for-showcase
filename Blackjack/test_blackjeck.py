@@ -52,18 +52,46 @@ def test_create_deck():
             return False
     return True
 
-# # hand_value    
-# hand_1_c = ['Q']
-# def test_calc_hand_val_1(hand_1_c):
-#     pass
+# hand_value    
+def test_calc_hand_val_1():
+    hand_1_c = ['Q']
+    return bs.calc_hand_val(hand_1_c) == 10
 
-# hand_2_c = hand_1_c
-# def test_calc_hand_val_2(hand_2_c):
-#     pass
+def test_calc_hand_val_2_i():
+    hand_2_c_i = ['Q', 'A']
+    return bs.calc_hand_val(hand_2_c_i) == 21
 
-# hand_5_c = hand_1_c
-# def test_calc_hand_val_3(hand_5_c):
-#     pass
+def test_calc_hand_val_2_ii():
+    hand_2_c_ii = ['A', 'K']
+    return bs.calc_hand_val(hand_2_c_ii) == 21
+
+def test_calc_hand_val_2_iii():
+    hand_2_c_iii = ['3', '9']
+    return bs.calc_hand_val(hand_2_c_iii) == 12
+
+def test_calc_hand_val_2_iv():
+    hand_2_c_iv = ['10', '3']
+    return bs.calc_hand_val(hand_2_c_iv) == 13
+
+def test_calc_hand_val_5_i():
+    hand_5_c_i = ['2', '2', '2', '3', '4']
+    return bs.calc_hand_val(hand_5_c_i) == 13
+
+def test_calc_hand_val_5_ii():
+    hand_5_c_ii = ['2', '2', '2', '10', 'K']
+    return bs.calc_hand_val(hand_5_c_ii) == 26
+
+def test_calc_hand_val_5_iii():
+    hand_5_c_iii = ['2', '2', '2', '10', 'A']
+    return bs.calc_hand_val(hand_5_c_iii) == 17
+
+def test_calc_hand_val_5_iv():
+    hand_5_c_iv = ['2', '2', '2', '4', 'A']
+    return bs.calc_hand_val(hand_5_c_iv) == 21
+
+def test_calc_hand_val_5_v():
+    hand_5_c_v = ['2', '2', '2', '5', 'A']
+    return bs.calc_hand_val(hand_5_c_v) == 12
 
 # hand_w_A_1 = hand_1_c
 # def test_calc_hand_val_4(hand_w_A_1): # Ace as 11
