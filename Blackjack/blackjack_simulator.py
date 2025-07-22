@@ -77,11 +77,24 @@ Simulate a game
     # OUTPUT: return Win, draw, loss 
 """
 def simulate_game(remain_deck):
-    pass
-
-
+    dealer_hand = simulate_hand(remain_deck)
+    player_hand = simulate_hand(remain_deck)
+    print(dealer_hand)
+    player_value = calc_hand_val(player_hand)
+    print(player_hand, player_value)
+    if player_value > 21:
+        return -1 # loss if player's hand exceed 21
+    dealer_value = calc_hand_val(dealer_hand)
+    print(dealer_value)
+    if dealer_value > 21 or player_value > dealer_value:
+        return 1 # player win
+    elif player_value == dealer_value:
+        return 0 # draw if hands tie
+    else:
+        return -1 # player loss
+    
 # # random.choice(range(10))
-# deck_0 = create_deck()
+deck_0 = create_deck()
 # deck_i = create_deck()
 # card_i = draw_card(deck_i)
 # card_i
@@ -97,7 +110,7 @@ def simulate_game(remain_deck):
 #     # except:
 #     print(deck_0.count(i))
 
-
+simulate_game(deck_0)
 
     
 
