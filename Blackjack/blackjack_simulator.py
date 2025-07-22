@@ -25,7 +25,7 @@ def create_deck():
     ranks = list(map(str, range(2,11)))
     ranks.extend(['J','Q','K', 'A'])    
     suits = ["Spades" , "Hearts" , "Clubs" , "Diamonds"]
-    deck_i = [(s, r) for s in suits for r in ranks] 
+    deck_i = [(r, s) for s in suits for r in ranks] 
     return deck_i[:]
 
 """
@@ -39,7 +39,7 @@ card_values = {
 }
 
 def calc_hand_val(hand):
-    total = sum(card_values[card] for card in hand)
+    total = sum(card_values[card[0]] for card in hand)
     aces = hand.count('A')
     while total > 21 and aces:
         total -= 10
@@ -48,10 +48,52 @@ def calc_hand_val(hand):
 
 
 """
+draw a card:
+"""
+def simulate_hand(remain_deck):
+    pass    
+
+"""
+Generate a hand:
+"""
+def simulate_hand(remain_deck):
+    pass    
+
+
+
+"""
 Simulate a game
-    # INPUT: An array of x and y cards (x for player, y for dealer)
+    # INPUT: an array that contain cards that are not drawn
     # OUTPUT: return Win, draw, loss 
 """
-def simulate_game(hand_player, hand_dealer):
+def simulate_game(remain_deck):
     pass
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
