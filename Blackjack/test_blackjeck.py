@@ -115,15 +115,28 @@ def test_draw_card():
     deck_before = bs.create_deck()
     deck_i = bs.create_deck()
     card_i = bs.draw_card(deck_i)
-    print(card_i)
+    # print(card_i)
     try:
         deck_i.index(card_i)
         return False
     except:
         return deck_before.index(card_i)
 
-
-
+def test_simulate_hand():
+    deck_before = bs.create_deck()  
+    deck_i = bs.create_deck()
+    hand_i = bs.simulate_hand(deck_i)
+    if len(hand_i) < 2:
+        return False
+    for i in hand_i:
+        try:
+            deck_i.count(i)
+            return False
+        except:
+            if deck_before.count(i) == 1:
+                continue
+    return True
+    
 
 
 

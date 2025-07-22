@@ -59,8 +59,17 @@ def draw_card(deck_current):
 """
 Generate a hand:
 """
-def simulate_hand(remain_deck):
-    pass    
+def simulate_hand(deck_current): #, isDealer = True) # hand_current):
+    # if isDealer and len(hand_current) == 1:  # dealer show first card
+        # pass
+    handcurrent = []
+    handcurrent.append(draw_card(deck_current))
+    handcurrent.append(draw_card(deck_current))
+    # print(handcurrent, len(deck_current))
+    while calc_hand_val(handcurrent) < 17:
+        handcurrent.append(draw_card(deck_current))
+    # print(handcurrent, len(deck_current))
+    return handcurrent    
 
 """
 Simulate a game
@@ -71,21 +80,26 @@ def simulate_game(remain_deck):
     pass
 
 
-# random.choice(range(10))
-
+# # random.choice(range(10))
+# deck_0 = create_deck()
 # deck_i = create_deck()
 # card_i = draw_card(deck_i)
 # card_i
-# len(deck_i)
-# deck_i.index(card_i)
+# # len(deck_i)
+# # deck_i.index(card_i)
+# # deck_0.index(card_i)
+# hand_i = simulate_hand(deck_i)
+# for i in hand_i:
+#     print(i)
+#     # try:
+#     #     deck_i.index(hand_i[i])
+#     #     False
+#     # except:
+#     print(deck_0.count(i))
 
 
 
-
-
-
-
-
+    
 
 
 
