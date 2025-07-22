@@ -16,6 +16,7 @@ Create a deck:
     # OUTPUT: An array of 52 cards (4 suits, 13 cards each)
 """
 
+import random
 # import sys
 # import os
 # m_path = os.path.abspath(os.path.join(os.path.dirname(__path__), '..', 'blackjeck_simulator'))
@@ -50,16 +51,16 @@ def calc_hand_val(hand):
 """
 draw a card:
 """
-def simulate_hand(remain_deck):
-    pass    
+def draw_card(deck_current):
+    draw_i = random.choice(range(len(deck_current)))
+    return deck_current.pop(draw_i)
+
 
 """
 Generate a hand:
 """
 def simulate_hand(remain_deck):
     pass    
-
-
 
 """
 Simulate a game
@@ -70,7 +71,13 @@ def simulate_game(remain_deck):
     pass
 
 
+# random.choice(range(10))
 
+# deck_i = create_deck()
+# card_i = draw_card(deck_i)
+# card_i
+# len(deck_i)
+# deck_i.index(card_i)
 
 
 

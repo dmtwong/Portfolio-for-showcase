@@ -111,6 +111,16 @@ def test_calc_hand_val_5_v():
 # hand_dealer_1 = hand_1_c
 
 
+def test_draw_card():
+    deck_before = bs.create_deck()
+    deck_i = bs.create_deck()
+    card_i = bs.draw_card(deck_i)
+    print(card_i)
+    try:
+        deck_i.index(card_i)
+        return False
+    except:
+        return deck_before.index(card_i)
 
 
 
